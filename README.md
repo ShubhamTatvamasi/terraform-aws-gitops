@@ -63,7 +63,8 @@ install cert-manager:
 helm upgrade -i cert-manager jetstack/cert-manager \
   --create-namespace \
   --namespace cert-manager \
-  --set crds.enabled=true
+  --set crds.enabled=true \
+  --set config.featureGates.ACMEHTTP01IngressPathTypeExact=false
 ```
 
 Setup ClusterIssuer:
